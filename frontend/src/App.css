@@ -1,0 +1,204 @@
+:root {
+  --primary-brown: #5d4037;
+  --primary-green: #2e7d32;
+  --accent-saffron: #fbc02d;
+  --bg-warm: #fffbf2;
+  --text-dark: #3e2723;
+  --white: #ffffff;
+  --border-soft: #e0d7c6;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-warm);
+  color: var(--text-dark);
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+}
+
+header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--border-soft);
+}
+
+.kwame-header h1 {
+  margin: 0;
+  color: var(--primary-brown);
+  font-size: 2.5rem;
+}
+
+.kwame-header p {
+  margin: 0.5rem 0 0;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.score-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(93, 64, 55, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border: 1px solid var(--border-soft);
+}
+
+.trust-dial {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-dial svg {
+  transform: rotate(-90deg);
+}
+
+.trust-dial .score-text {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-brown);
+}
+
+.rationale-panel {
+  flex: 1;
+}
+
+.rationale-panel h3 {
+  margin-top: 0;
+  color: var(--primary-brown);
+}
+
+.kwame-speech {
+  background: var(--bg-warm);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 5px solid var(--accent-saffron);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid var(--border-soft);
+}
+
+.stat-item label {
+  display: block;
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.transactions-panel {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-soft);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th {
+  text-align: left;
+  padding: 1rem;
+  color: #777;
+  border-bottom: 2px solid var(--bg-warm);
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--bg-warm);
+}
+
+.type-incoming { color: var(--primary-green); font-weight: 600; }
+.type-outgoing { color: #d32f2f; font-weight: 600; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.kwame-avatar {
+  background: var(--primary-brown);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.kwame-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--accent-saffron);
+  margin-bottom: 1rem;
+}
+
+.loan-offer {
+  background: var(--accent-saffron);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: var(--primary-brown);
+}
+
+.loan-offer h2 { margin: 0; font-size: 2rem; }
+.loan-offer p { font-weight: 600; margin-bottom: 1.5rem; }
+
+.btn-apply {
+  background: var(--primary-brown);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-apply:hover {
+  transform: scale(1.05);
+}
