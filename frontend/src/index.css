@@ -1,33 +1,88 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "Instrument Serif", serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-background: #ffffff;
+  --color-foreground: #0f1419;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f1419;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f1419;
+  --color-primary: #1d9bf0;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #eff3f4;
+  --color-secondary-foreground: #0f1419;
+  --color-muted: #f7f9f9;
+  --color-muted-foreground: #536471;
+  --color-accent: #1d9bf0;
+  --color-accent-foreground: #ffffff;
+  --color-border: #e1e8ed;
+  --color-input: #cfd9de;
+  --color-ring: #1d9bf0;
+  --color-chart-1: #1d9bf0;
+  --color-chart-2: #0f1419;
+  --color-chart-3: #536471;
+  --color-chart-4: #f4212e;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-#root {
-  width: 100%;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-background: #000000;
+    --color-foreground: #e7e9ea;
+    --color-card: #16181c;
+    --color-card-foreground: #e7e9ea;
+    --color-popover: #16181c;
+    --color-popover-foreground: #e7e9ea;
+    --color-primary: #1d9bf0;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #1e2732;
+    --color-secondary-foreground: #e7e9ea;
+    --color-muted: #111417;
+    --color-muted-foreground: #71767b;
+    --color-accent: #1d9bf0;
+    --color-accent-foreground: #ffffff;
+    --color-border: #2f3336;
+    --color-input: #2f3336;
+    --color-ring: #1d9bf0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(29, 155, 240, 0.1), transparent 24%),
+      linear-gradient(180deg, #ffffff 0%, #f7f9f9 100%);
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at top left, rgba(29, 155, 240, 0.12), transparent 24%),
+      linear-gradient(180deg, #000000 0%, #0b0f14 100%);
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
