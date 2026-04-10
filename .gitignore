@@ -8,3 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local environment and data
+.env
+frontend/.env
+test.db
+
+# Local verification artifacts
+frontend/*.png

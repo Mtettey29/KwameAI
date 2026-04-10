@@ -1,3 +1,7 @@
+import os
+
+os.environ["DATABASE_URL"] = "sqlite:///./test.db"
+
 from app.database import SessionLocal
 from app.agent import KwameAgent
 from app.models import Vendor
